@@ -15,12 +15,15 @@
 <script type='text/javascript'>
   //<![CDATA[
     // // 사용할 앱의 JavaScript 키를 설정해 주세요.
-     Kakao.init('f21a2d3998cc0db238d757924ff7a378')
+    Kakao.init('f21a2d3998cc0db238d757924ff7a378');
     // // 카카오링크 버튼을 생성합니다. 처음 한번만 호출하면 됩니다.
     function sendLink() {
-      Kakao.Link.sendScrap({
-        requestUrl: 'https://open.kakao.com/o/gdlYCRY';
-	templateId : ${13193};
+      Kakao.Link.sendCustom({
+        templateId: 13193,
+        templateArgs: {
+          'title': '제목 영역입니다.',
+          'description': '설명 영역입니다.'
+        }
       });
     }
   //]]>
