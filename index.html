@@ -9,18 +9,19 @@
 
 </head>
 <body>
-<a id="kakao-link-btn" href="javascript:;">
+<a id="kakao-link-btn" href="javascript:sendLink()">
 <img src="//developers.kakao.com/assets/img/about/logos/kakaolink/kakaolink_btn_medium.png"/>
 </a>
 <script type='text/javascript'>
   //<![CDATA[
     // // 사용할 앱의 JavaScript 키를 설정해 주세요.
-    Kakao.init('f21a2d3998cc0db238d757924ff7a378');
+     Kakao.init('f21a2d3998cc0db238d757924ff7a378')
     // // 카카오링크 버튼을 생성합니다. 처음 한번만 호출하면 됩니다.
-    Kakao.Link.createScrapButton({
-      container: '#kakao-link-btn',
-      requestUrl: 'https://developers.kakao.com'
-    });
+    function sendLink() {
+      Kakao.Link.sendScrap({
+        requestUrl: 'https://developers.kakao.com'
+      });
+    }
   //]]>
 </script>
 
